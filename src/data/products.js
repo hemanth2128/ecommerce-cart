@@ -4,70 +4,70 @@ const products = [
 id:1,
 name:"Wireless Mouse",
 price:799,
-image:"public/images/mouse.jpg"
+image:"/images/mouse.jpg"
 },
 
 {
 id:2,
 name:"Keyboard",
 price:1499,
-image:"public/images/keyboard.jpg"
+image:"/images/keyboard.jpg"
 },
 
 {
 id:3,
 name:"Headphones",
 price:1999,
-image:"public/images/headphones.jpg"
+image:"/images/headphones.jpg"
 },
 
 {
 id:4,
 name:"Smart Watch",
 price:3499,
-image:"public/images/smartwatch.jpg"
+image:"/images/smartwatch.jpg"
 },
 
 {
 id:5,
 name:"Bluetooth Speaker",
 price:2499,
-image:"public/images/speaker.jpg"
+image:"/images/speaker.jpg"
 },
 
 {
 id:6,
 name:"Gaming Mouse",
 price:1799,
-image:"public/images/GamingMouse.avif"
+image:"/images/GamingMouse.avif"
 },
 
 {
 id:7,
 name:"Laptop Stand",
 price:999,
-image:"public/images/lapStand.jpg"
+image:"/images/lapStand.jpg"
 },
 
 {
 id:8,
 name:"USB Hub",
 price:699,
-image:"public/images/usbHub.jpg"
+image:"/images/usbHub.jpg"
 },
 
 {
 id:9,
 name:"Mechanical Keyboard",
 price:3999,
-image:"public/images/MechanicalKeyboard.jpg"
+image:"/images/MechanicalKeyboard.jpg"
 },
 
 {
 id:10,
 name:"Power Bank",
 price:1599,
-image:"public/images/PowerBank.avif"
+image:"/images/PowerBank.avif"
 },
 
 
@@ -75,14 +75,14 @@ image:"public/images/PowerBank.avif"
 id:11,
 name:"Webcam",
 price:2199,
-image:"public/images/webcam.jpg"
+image:"/images/webcam.jpg"
 },
 
 {
 id:12,
 name:"Portable SSD",
 price:5499,
-image:"public/images/SSD.jpg"
+image:"/images/SSD.jpg"
 }
 
 ]
