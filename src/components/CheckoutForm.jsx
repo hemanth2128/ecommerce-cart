@@ -3,137 +3,166 @@ import { z } from "zod"
 
 const schema = z.object({
 
-name:
-z.string()
-.min(3,"Minimum 3 chars"),
+  name:
+  z.string()
+  .min(3, "Minimum 3 characters required"),
 
-email:
-z.string()
-.email("Invalid Email"),
+  email:
+  z.string()
+  .email("Invalid Email"),
 
-address:
-z.string()
-.min(5,"Address too short")
-
-})
-
-function CheckoutForm(){
-
-const [form,setForm]=
-useState({
-
-name:"",
-email:"",
-address:""
+  address:
+  z.string()
+  .min(5, "Address too short")
 
 })
 
-const [errors,setErrors]=
-useState({})
+function CheckoutForm() {
 
-function handleSubmit(e){
+  const [form, setForm] =
+  useState({
 
-e.preventDefault()
+    name: "",
+    email: "",
+    address: ""
 
-const result =
-schema.safeParse(form)
+  })
 
-if(!result.success){
+  const [errors, setErrors] =
+  useState({})
 
-const fieldErrors={}
+  function handleSubmit(e) {
 
-result.error.errors.forEach(
-err=>{
+    e.preventDefault()
 
-fieldErrors[
-err.path[0]
-]=err.message
+    const result =
+    schema.safeParse(form)
 
-}
-)
+    if (!result.success) {
 
-setErrors(fieldErrors)
+      const fieldErrors = {}
 
-return
-}
+      result.error.errors.forEach(
+        (err) => {
 
-setErrors({})
+          fieldErrors[
+            err.path[0]
+          ] = err.message
 
-alert(
-"Checkout Successful"
-)
+        }
+      )
 
-}
+      setErrors(fieldErrors)
 
-return(
+      return
+    }
 
-<form
-className="checkout"
-onSubmit={handleSubmit}
->
+    setErrors({})
 
-<h2>
-Checkout
-</h2>
+    alert(
+      "Checkout Successful 🎉"
+    )
 
-<input
-placeholder="Name"
-value={form.name}
-onChange={(e)=>
+    setForm({
 
-setForm({
+      name: "",
+      email: "",
+      address: ""
 
-...form,
-name:e.target.value
+    })
 
-})
+  }
 
-}
-/>
+  return (
 
-<p>{errors.name}</p>
+    <form
+      className="checkout"
+      onSubmit={handleSubmit}
+    >
 
-<input
-placeholder="Email"
-value={form.email}
-onChange={(e)=>
+      <h2>
+        Checkout
+      </h2>
 
-setForm({
+      <input
 
-...form,
-email:e.target.value
+        type="text"
 
-})
+        placeholder="Enter Name"
 
-}
-/>
+        value={form.name}
 
-<p>{errors.email}</p>
+        onChange={(e) =>
 
-<textarea
-placeholder="Address"
-value={form.address}
-onChange={(e)=>
+          setForm({
 
-setForm({
+            ...form,
 
-...form,
-address:e.target.value
+            name: e.target.value
 
-})
+          })
 
-}
-/>
+        }
 
-<p>{errors.address}</p>
+      />
 
-<button>
-Submit Order
-</button>
+      <p>{errors.name}</p>
 
-</form>
+      <input
 
-)
+        type="email"
+
+        placeholder="Enter Email"
+
+        value={form.email}
+
+        onChange={(e) =>
+
+          setForm({
+
+            ...form,
+
+            email: e.target.value
+
+          })
+
+        }
+
+      />
+
+      <p>{errors.email}</p>
+
+      <textarea
+
+        placeholder="Enter Address"
+
+        value={form.address}
+
+        onChange={(e) =>
+
+          setForm({
+
+            ...form,
+
+            address: e.target.value
+
+          })
+
+        }
+
+      />
+
+      <p>{errors.address}</p>
+
+      <button type="submit">
+
+        Submit Order
+
+      </button>
+
+    </form>
+
+  )
 
 }
 
