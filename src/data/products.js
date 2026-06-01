@@ -46,7 +46,7 @@ image:"/images/GamingMouse.avif"
 id:7,
 name:"Laptop Stand",
 price:999,
-image:"/images/lapStand.jpg"
+image:"/images/LapStand.jpg"
 },
 
 {
